@@ -1,0 +1,16 @@
+{% set syncthing = salt['grains.filter_by']({
+    'default': {
+        'pkg': 'syncthing',
+        'service': 'syncthing',
+        'conf_file': '/etc/syncthing/syncthing.conf',
+        'config': {
+            'key': 'value',
+        },
+    },
+    'Debian': {
+    },
+    'RedHat': {
+    },
+    'FreeBSD': {
+    },
+}, grain='os_family', merge=salt['pillar.get']('syncthing:lookup'), base='default') %}

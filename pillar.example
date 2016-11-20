@@ -1,0 +1,6 @@
+syncthing:
+  lookup:
+    pkg: mysyncthing
+    conf_file: /usr/local/etc/syncthing/syncthing.conf
+  config:
+    key: othervalue

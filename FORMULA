@@ -1,0 +1,9 @@
+name: syncthing
+os: FreeBSD
+os_family: FreeBSD
+version: 1
+release: 1
+summary: SaltStack Formula for Syncthing
+description: SaltStack Formula for Syncthing
+top_level_dir: syncthing
+recommended: 
