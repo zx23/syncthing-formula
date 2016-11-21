@@ -29,7 +29,7 @@ TODO - add description of this state
 Testing
 =======
 
-just run ```vagrant up```
+just run ``vagrant up``
 
 Template
 ========
