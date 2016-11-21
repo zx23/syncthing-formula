@@ -26,6 +26,10 @@ TODO - add description of this state
 
 TODO - add description of this state
 
+Testing
+=======
+
+just run ```vagrant up```
 
 Template
 ========
