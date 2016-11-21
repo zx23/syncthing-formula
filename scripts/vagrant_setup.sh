@@ -6,13 +6,13 @@ then
 else
     SRCDIR=/home/vagrant/sync
 fi
-sudo mkdir -p /srv/salt
-sudo mkdir -p /srv/pillar
-sudo mkdir -p /srv/formulas
-sudo cp $SRCDIR/pillar.example /srv/pillar/pillar.sls
-sudo cp -r $SRCDIR/syncthing /srv/salt
+mkdir -p /srv/salt
+mkdir -p /srv/pillar
+mkdir -p /srv/formulas
+cp $SRCDIR/pillar.example /srv/pillar/pillar.sls
+cp -r $SRCDIR/syncthing /srv/salt
 echo "\
 base:
   '*':
-    - pillar" | sudo tee /srv/pillar/top.sls
-sudo cp $SRCDIR/salt-top.example /srv/salt/top.sls
+    - pillar" | tee /srv/pillar/top.sls
+cp $SRCDIR/salt-top.example /srv/salt/top.sls

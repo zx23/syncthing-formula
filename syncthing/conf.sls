@@ -1,16 +1,19 @@
-{% from "syncthing/map.jinja" import syncthing, syncthing_config with context %}
+{% from "syncthing/map.jinja" import syncthing with context %}
 
 include:
   - syncthing
 
-syncthing-config:
-  file.managed:
-    - name: {{ syncthing.conf_file }}
-    - source: salt://syncthing/templates/conf.jinja
-    - template: jinja
-    - context:
-      config: {{ syncthing_config }}
-    - watch_in:
-      - service: syncthing
-    - require:
-      - pkg: syncthing
+syncthing-config-user:
+  sysrc.managed:
+    - name: syncthing_user 
+    - value: {{ syncthing.user }}
+
+syncthing-config-group:
+  sysrc.managed:
+    - name: syncthing_group
+    - value: {{ syncthing.group }}
+
+syncthing-config-dir:
+  sysrc.managed:
+    - name: syncthing_dir
+    - value: {{ syncthing.dir }}

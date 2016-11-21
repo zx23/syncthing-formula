@@ -1,12 +1,12 @@
 #!/bin/sh
 
-if [[ -z $(which pip) ]]
+if [ -z $(which pip) ]
 then
-    sudo salt-call --local pkg.install python-pip
+    salt-call --local pkg.install python-pip
 fi
-if [[ -z $(which testinfra) ]]
+if [ -z $(which testinfra) ]
 then
-    sudo pip install testinfra
+    pip install testinfra
 fi
 if [ "$(ls /vagrant)" ]
 then
@@ -14,5 +14,5 @@ then
 else
     SRCDIR=/home/vagrant/sync
 fi
-sudo rm -rf $SRCDIR/tests/__pycache__
+rm -rf $SRCDIR/tests/__pycache__
 testinfra $SRCDIR/tests

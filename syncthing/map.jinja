@@ -1,11 +1,10 @@
 {% set syncthing = salt['grains.filter_by']({
     'default': {
-        'pkg': 'syncthing',
+        'pkgs': ['syncthing'],
         'service': 'syncthing',
-        'conf_file': '/etc/syncthing/syncthing.conf',
-        'config': {
-            'key': 'value',
-        },
+        'user': 'syncthing',
+        'group': 'syncthing',
+        'dir': '/var/db/syncthing',
     },
     'Debian': {
     },
